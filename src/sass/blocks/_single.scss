@@ -1,0 +1,175 @@
+.info{
+   &__title{
+      font-weight: 900;
+      font-size: 40px;
+      line-height: 130%;
+      color: #1E212C;
+      padding: 60px 0 15px 0;
+   }
+   .tabs{
+      &-nav {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         max-width: 400px;
+         &__item {
+            cursor: pointer;
+            &.is-active {
+               border: 1px solid #000;
+               font-weight: 700;
+               font-size: 14px;
+               line-height: 26px;
+               color: #17696A;
+               padding: 10px 30px;
+               border-radius: 24px;
+            }
+         }
+      }
+      &__content{
+         margin: 30px 0 0 0;
+      }
+   }
+   .tab {
+      display: none;
+      padding: 20px;
+      &.is-active { display: block; }
+   }
+   .tovar{
+      display: flex;
+      justify-content: space-around;
+      &__picture{
+         img{
+            max-width: 500px;
+            height: 350px;
+         }
+      }
+      &__content{
+         padding-left: 85px;
+      }
+      &__information{
+         display: flex;
+         justify-content: space-between;
+      }
+      .price{
+         &__now{
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 31px;
+            color: #FF4242;
+         }
+         &__prev{
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 27px;
+            text-decoration-line: line-through;
+            color: #787A80;
+            padding-left: 12px;
+         }
+      }
+      &__reviews{
+         font-weight: 400;
+         font-size: 14px;
+         color: #787A80;
+      }
+      .color{
+         &__name{
+            padding: 18px 0 12px 0;
+            font-weight: 400;
+            font-size: 14px;
+            color: #424551;
+         }
+         &__content{
+            display: flex;
+         }
+         &__item{
+            border: 1px solid #D7DADD;
+            margin: 0 8px 0 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 100%;
+
+            &:nth-child(1){
+               background: #E0AEA2;
+            }
+            &:nth-child(2){
+               background: #C0DDED;
+            }
+            &:nth-child(3){    
+               background: #FEDE41;
+            }
+         }
+      }
+      .order{
+         padding: 15px 0 30px 0;
+         &__size{
+            font-weight: 400;
+            font-size: 14px;
+            color: #424551;
+         }
+         &__link{
+            position: relative;
+            &::before{
+                  position: absolute;
+                  content: url("../img/Cart-tovar.svg");
+                  top: 0;
+                  left: 15px;
+                  z-index: 10;
+            }
+         }
+         &__here{
+            padding: 10px;
+            font-weight: 400;
+            font-size: 14px;
+            color: #9A9CA5;
+            background: #FFFFFF;
+            border: 1px solid #D7DADD;
+            border-radius: 4px;
+            width: 300px;
+         }
+         &__count{
+            width: 50px;
+            height: 0;
+            font-weight: 400;
+            font-size: 14px;
+            color: #424551;
+            padding: 20px;
+            background: #FFFFFF;
+            border: 1px solid #D7DADD;
+            border-radius: 4px;
+            margin: 10px 0 0 0;
+         }
+         &__add{
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 44px;
+            text-align: center;
+            letter-spacing: 0.5px;
+            color: #FFFFFF;
+            background: #17696A;
+            border-radius: 4px;
+            text-decoration: none;
+            padding: 0px 20px 0px 40px;
+            position: relative;
+            border: none;
+         }
+      }
+      &__descr{
+         max-width: 900px;
+         font-family: 'Montserrat';
+         font-weight: 300;
+         font-size: 21px;
+         line-height: 26px;
+         color: #000;
+      }
+      .review{
+         &__name{
+            max-width: 600px;
+            font-family: 'Montserrat';
+            font-weight: 300;
+            font-size: 21px;
+            line-height: 26px;
+            color: #000;
+         }
+      }
+   }
+}

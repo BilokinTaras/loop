@@ -1,0 +1,33 @@
+.email{
+   .cancel{
+      max-width: 510px;
+      text-align: center;
+      margin: 50px auto 30px auto;
+      display: block;
+   }
+   .done{
+      max-width: 510px;
+      text-align: center;
+      margin: 50px auto 30px auto;
+      display: block;
+   }
+   .order{
+      &_hold{
+         text-align: center;
+         font-family: 'Montserrat';
+         font-weight: 900;
+         font-size: 46px;
+         line-height: 130%;
+         color: #1E212C;
+      }
+      &_delete{
+         text-align: center;
+         font-family: 'Montserrat';
+         font-weight: 900;
+         font-size: 46px;
+         line-height: 130%;
+         color: #1E212C;
+         
+      }
+   }
+}

@@ -1,0 +1,44 @@
+.page{
+   &__404{
+      font-weight: 300;
+      font-size: 200px;
+      line-height: 242px;
+      color: #136AFB;
+      padding: 180px 0 48px 0;
+      text-align: center;
+   }
+   &__name{
+      font-weight: 800;
+      font-size: 42px;
+      line-height: 70px;
+      color: #201F1F;
+      text-align: center;
+   }
+   &__descr{
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 19px;
+      color: #201F1F;
+      text-align: center;
+   }
+   &__return{
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 26px;
+      color: #FFFFFF;
+      background: #201F1F;
+      padding: 15px 63px 15px 90px;
+      display: block;
+      margin: 20px auto;
+      width: 115px;
+      height: 30px;
+      position: relative;
+      text-decoration: none;
+      &::before{
+         position: absolute;
+         content: url("../img/reutrn.svg");
+         top: 17px;
+         left: 55px;
+      }
+   }
+}
