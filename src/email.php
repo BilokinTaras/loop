@@ -14,21 +14,17 @@ require 'PHPMailer/src/SMTP.php';
 
 $mail = new PHPMailer;
 
-/* $mail->SMTPAuth = false; */
-
-
 $mail->isSMTP();                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';       // Specify main and backup SMTP servers
-$mail->SMTPAuth = false;
-$mail->SMTPAutoTLS = false;               // Enable SMTP authentication
+$mail->SMTPAuth = true;               // Enable SMTP authentication
 $mail->Username = 'taryknyga@gmail.com';   // SMTP username
 $mail->Password = '15102003taras!!!';   // SMTP password
 $mail->SMTPSecure = 'tls';            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                    // TCP port to connect to
 
-
-$mailusers =  $_SESSION['user']['email'];
 // Sender info
+$mailusers =  $_SESSION['user']['email'];
+
 $mail->setFrom('taryknyga@gmail.com', 'FromName');
 $mail->addReplyTo('' . $mailusers, 'ReplyName');
 
@@ -44,7 +40,6 @@ $mail->isHTML(true);
 // Mail subject
 $mail->Subject = 'Email from local host to test';
 
-// Mail body content
 $mainsum = 0;
 
 $bodyContent = '<h1>Вас вітає магазин LOOP</h1>';
