@@ -5,6 +5,9 @@ session_start();
 require_once "db.php";
 require_once "functions.php";
 
+if (!$_SESSION['user']) {
+	header("Location: index.php");
+}
 
 if (isset($_GET['delete_id']) && isset($_SESSION['cart_list'])) {
 	foreach ($_SESSION['cart_list'] as $key => $value) {

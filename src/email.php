@@ -14,14 +14,17 @@ require 'PHPMailer/src/SMTP.php';
 
 $mail = new PHPMailer;
 
+/* $mail->SMTPAuth = false; */
+
+
 $mail->isSMTP();                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';       // Specify main and backup SMTP servers
-$mail->SMTPAuth = true;               // Enable SMTP authentication
+$mail->SMTPAuth = false;
+$mail->SMTPAutoTLS = false;               // Enable SMTP authentication
 $mail->Username = 'taryknyga@gmail.com';   // SMTP username
-$mail->Password = '15102003taras';   // SMTP password
+$mail->Password = '15102003taras!!!';   // SMTP password
 $mail->SMTPSecure = 'tls';            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                    // TCP port to connect to
-
 
 
 $mailusers =  $_SESSION['user']['email'];
@@ -75,8 +78,6 @@ mysqli_query($connection, $query);
 
 
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -98,6 +99,7 @@ mysqli_query($connection, $query);
       <?php
       // Send email 
       if (!$mail->send()) {
+         echo $mail->ErrorInfo;
          echo '<img src="img/cancel.png" class="cancel">';
          echo '<h1 class="order_delete">Замовлення не відправлено</h1>';
          echo '<a href="index.php" class="page__return">Повернутися</a>';

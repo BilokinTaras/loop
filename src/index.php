@@ -5,8 +5,6 @@ session_start();
 require_once "db.php";
 require_once "functions.php";
 
-
-
 ?>
 
 
@@ -127,7 +125,7 @@ require_once "functions.php";
                         <div class="product-picture">
                             <img src="data:image/jpeg;base64, <?= $showimg ?>" alt="Product">
                         </div>
-                        <p class="product-title"><?= $course_item['name'] ?></p>
+                        <p class="product-title"><?= $course_item['title'] ?></p>
                         <p class="product-price"><?php echo $course_item['price'] ?> грн</p>
 
                         <a href="single.php?id=<?php echo $course_item['id'] ?>" class="product-more">
@@ -167,7 +165,7 @@ require_once "functions.php";
                         <div class="product-picture">
                             <img src="data:image/jpeg;base64, <?= $showimg ?>" alt="Product">
                         </div>
-                        <p class="product-title"><?= $course_item['name'] ?></p>
+                        <p class="product-title"><?= $course_item['title'] ?></p>
                         <p class="product-price"><?php echo $course_item['price'] ?> грн</p>
                         <p class="product-price_prev"><?php echo $course_item['price_prev'] ?> грн</p>
                         <a href="single.php?id=<?php echo $course_item['id'] ?>" class="product-more">

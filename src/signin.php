@@ -42,9 +42,13 @@ if (mysqli_num_rows($check_user) > 0) {
 
     $_SESSION['user'] = [
         "id" => $user['id'],
+        "login" => $user['login'],
         "full_name" => $user['full_name'],
         "email" => $user['email']
     ];
+    if ($_SESSION['user']) {
+        header("Location: index.php");
+    }
 } else {
 
     $response = [

@@ -11,14 +11,7 @@ $password_confirm = $_POST['password_confirm'];
 
 $check_login = mysqli_query($connection, "SELECT * FROM `users` WHERE `login` = '$login'");
 if (mysqli_num_rows($check_login) > 0) {
-    $response = [
-        "status" => false,
-        "type" => 1,
-        "message" => "Такой логин уже существует",
-        "fields" => ['login']
-    ];
-
-    echo json_encode($response);
+    echo "<p>Такий логін вже є, виберіть інший</p>";
     die();
 }
 
@@ -63,6 +56,20 @@ if ($password === $password_confirm) {
     $password = md5($password);
 
     mysqli_query($connection, "INSERT INTO `users` (`id`, `full_name`, `login`, `email`, `password`) VALUES (NULL, '$full_name', '$login', '$email', '$password')");
+
+    $check_user = mysqli_query($connection, "SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'");
+    if (mysqli_num_rows($check_user) > 0) {
+
+        $user = mysqli_fetch_assoc($check_user);
+
+        $_SESSION['user'] = [
+            "id" => $user['id'],
+            "login" => $user['login'],
+            "full_name" => $user['full_name'],
+            "email" => $user['email']
+        ];
+        header("Location: index.php");
+    }
 
     $response = [
         "status" => true,
